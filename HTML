@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+//this is the title of our webpage
+ <title>::relogio em javascript::</title>
+ <meta charset="utf-8">
+ 
+//puting the tag 'script' will specifies the Internet media type, in this case, the type is Javascript
+<script type="text/javascript">
+
+// this function is a block of code designed to perform a particular task, in this case, 'relogio' contain many task
+  function relogio() {
+   var data = new Date();
+   var horas = data.getHours();
+   var minutos = data.getMinutes();
+   var segundos = data.getSeconds();
+
+//Now we want to compare values and take action on the result, in this case, if our variable 'horas' was less than 10 so the browser put a '0' in front of it.
+   if(horas < 10) {
+    horas = "0"+horas;
+   }
+   if(minutos < 10) {
+    minutos = "0"+minutos;
+   }
+   if(segundos < 10) {
+    segundos = "0"+segundos;
+   }
+
+//Now it is time to put in our HTML the results, the proprety innerHTML returns the HTML content of our element
+   document.getElementById("relogio").innerHTML=horas+":"+minutos+":"+segundos;
+  }
+  
+  //The setInterval() method will calls our function and evaluates specified intervals (in this case, milliseconds).
+  window.setInterval("relogio()",1000);
+  
+  //This is the beggining of our css document. here wu put some sytle in the page
+  </script>
+ <style type="text/css">
+  #relogio {
+   font-size: 40px;
+   display: block;
+   margin: 100px auto;
+   padding: 30px;
+   background-color: green;
+   width: 150px;
+   border-radius: 6px;
+  }
+ </style>
+</head>
+<body>
+<div id="relogio">
+</div>
+</body>
+</html>
+//the end
